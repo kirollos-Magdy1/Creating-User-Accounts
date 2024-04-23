@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1422.4,5675.2</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1422.4,5822.4</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>tst_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -106,17 +106,14 @@
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Desc:  Login to the &quot;Hide Me Website&quot;&#xA;&#xA;PreCondition: &quot;Sign In&quot; Form Exists&#xA;&#xA;PostCondition:  &quot;Dashboard&quot; Exists or &quot;The username or password you entered is incorrect&quot; Message Exists&#xA;&#xA;inArg:&#xA;in_strUsername&#xA;in_strPassword&#xA;&#xA;outArg:&#xA;out_boolLoginSuccess&#xA;&#xA;ioArg:&#xA;" DisplayName="HideMeWeb_Login" sap:VirtualizedContainerService.HintSize="1432.8,5610.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+  <Sequence sap2010:Annotation.AnnotationText="Desc:  Login to the &quot;Hide Me Website&quot;&#xA;&#xA;PreCondition: &quot;Sign In&quot; Form Exists&#xA;&#xA;PostCondition:  &quot;Dashboard&quot; Exists or &quot;The username or password you entered is incorrect&quot; Message Exists&#xA;&#xA;inArg:&#xA;in_strUsername&#xA;in_strPassword&#xA;&#xA;outArg:&#xA;out_boolLoginSuccess&#xA;&#xA;ioArg:&#xA;" DisplayName="HideMeWeb_Login" sap:VirtualizedContainerService.HintSize="1432.8,5757.6" sap2010:WorkflowViewState.IdRef="Sequence_5">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1370.4,5270.4" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-      <TryCatch.Variables>
-        <Variable x:TypeArguments="x:Boolean" Name="boolIsVerified" />
-      </TryCatch.Variables>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1370.4,5417.6" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -124,7 +121,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <TryCatch.Try>
-        <Sequence sap:VirtualizedContainerService.HintSize="1333.6,4992.8" sap2010:WorkflowViewState.IdRef="Sequence_60">
+        <Sequence sap:VirtualizedContainerService.HintSize="1333.6,5140" sap2010:WorkflowViewState.IdRef="Sequence_60">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -228,16 +225,16 @@
               <ActivityFunc x:TypeArguments="x:Boolean" />
             </ui:RetryScope.Condition>
           </ui:RetryScope>
-          <ui:RetryScope DisplayName="Solve Captcha" sap:VirtualizedContainerService.HintSize="1271.2,3112" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="3" RetryInterval="00:00:02">
+          <ui:RetryScope DisplayName="Solve Captcha" sap:VirtualizedContainerService.HintSize="1271.2,3259.2" sap2010:WorkflowViewState.IdRef="RetryScope_7" NumberOfRetries="3" RetryInterval="00:00:02">
             <ui:RetryScope.ActivityBody>
               <ActivityAction>
-                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="670.4,2896" sap2010:WorkflowViewState.IdRef="Sequence_50">
+                <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="670.4,3043.2" sap2010:WorkflowViewState.IdRef="Sequence_50">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="608,2809.6" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                  <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="608,2956.8" sap2010:WorkflowViewState.IdRef="Sequence_45">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:String" Name="strCaptchaText" />
                     </Sequence.Variables>
@@ -247,13 +244,13 @@
                         <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Log'" sap:VirtualizedContainerService.HintSize="545.6,2697.6" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="e76216589738d645ad781635f837ef64" Selector="&lt;html app='chrome.exe' title='Log in | hide.me' /&gt;">
+                    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe Log'" sap:VirtualizedContainerService.HintSize="545.6,2844.8" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="e76216589738d645ad781635f837ef64" Selector="&lt;html app='chrome.exe' title='Log in | hide.me' /&gt;">
                       <ui:BrowserScope.Body>
                         <ActivityAction x:TypeArguments="x:Object">
                           <ActivityAction.Argument>
                             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                           </ActivityAction.Argument>
-                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,2527.2" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="512,2674.4" sap2010:WorkflowViewState.IdRef="Sequence_46">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="x:Boolean" Name="boolIsVerified" />
                             </Sequence.Variables>
@@ -347,6 +344,15 @@
                                 </ui:TypeInto.Target>
                               </ui:TypeInto>
                             </Sequence>
+                            <ui:UiElementExists DisplayName="Element Exists 'P'" Exists="[boolIsVerified]" sap:VirtualizedContainerService.HintSize="449.6,147.2" sap2010:WorkflowViewState.IdRef="UiElementExists_14">
+                              <ui:UiElementExists.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="bcac2016-f257-4ced-842c-5820ffcd423f" InformativeScreenshot="fee4ae5201f2b96bf7c752d90cced739" Selector="&lt;webctrl id='mtcaptcha-iframe-1' tag='IFRAME' /&gt;&lt;webctrl tag='P' aaname='Verified Successfully' /&gt;" TimeoutMS="5000">
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:UiElementExists.Target>
+                            </ui:UiElementExists>
                             <If Condition="[boolIsVerified]" DisplayName="If &quot;Verified?&quot;" sap:VirtualizedContainerService.HintSize="449.6,1090.4" sap2010:WorkflowViewState.IdRef="If_7">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
