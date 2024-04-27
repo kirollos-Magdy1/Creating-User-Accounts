@@ -2,11 +2,10 @@
 
 A robot built with UI Path that listens to a specific email and reads the nationalities and genders data table from the received email, then generates additional information from the “[Fake Name Generator](https://www.fakenamegenerator.com/)” website, uses it to create a profile on the “[Automation Exercise](https://automationexercise.com/)” website,
 
-sends this information via an API.
-
-Also, the process involves enabling the desktop VPN application to create an account on the “[Hide Me](https://hide.me/en/)” VPN website before starting work on the data table records.
 
 The user data table is treated as transaction items, which are processed by assigning an ID for each transaction generated from the “[https://reqres.in”](https://reqres.xn--in-02t/) API using the user information, then processing the item and closing the transaction with a status either completed or failed with a message error and a screenshot.
+
+Also, the process involves enabling the desktop VPN application to create an account on the “[Hide Me](https://hide.me/en/)” VPN website before starting work on the data table records.
 
 Finally, gather all transactions within an excel file along with the user's information and send them back to the recipient email, and prepare to wait for another incoming email to begin processing its items.
 
