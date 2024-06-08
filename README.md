@@ -1,104 +1,36 @@
 # Project Overview
 
-A robot built with UI Path that listens to a specific email and reads the nationalities and genders data table from the received email, then generates additional information from the “[Fake Name Generator](https://www.fakenamegenerator.com/)” website, uses it to create a profile on the “[Automation Exercise](https://automationexercise.com/)” website,
+⚙️ **Configurigation Initialization**: The automation process begins by reading the configuration file to set up the required automation settings.
 
+📧 **Email Reception and Validation**: The system waits until an email with a specified subject is received. Upon reception, it downloads the attached Excel file and validates its format to ensure correct attachment data.
 
-The user data table is treated as transaction items, which are processed by assigning an ID for each transaction generated from the “[https://reqres.in”](https://reqres.xn--in-02t/) API using the user information, then processing the item and closing the transaction with a status either completed or failed with a message error and a screenshot.
+🔒 **VPN Activation and Account Creation**:
 
-Also, the process involves enabling the desktop VPN application to create an account on the “[Hide Me](https://hide.me/en/)” VPN website before starting work on the data table records.
+- The "Hide Me" Desktop VPN Application is activated to access the [Hide Me website](https://hide.me/en/).
+- Depending on the provided email:
+    - If the email is not associated with a "Hide Me" account, an activation email is received to create a new account by inserting a username and password.
+    - If the email is already linked to a "Hide Me" account, an email is received requesting a password change.
+    - Upon successful account activation or password reset within 30 seconds, the robot logs out. Otherwise proceed with the next step
 
-Finally, gather all transactions within an excel file along with the user's information and send them back to the recipient email, and prepare to wait for another incoming email to begin processing its items.
+🔑 **Login and Captcha Handling**: The robot logs into the "Hide Me" account and attempts to solve the captcha three times.
 
-# Automation Workflow Details
+📊 **Excel Data Extraction**: Extracting User records to a user info Data table from the downloaded Excel file.
 
-1️⃣ Read the configuration file to initialize automation settings.
+👤 **User Profile Generation**:
 
-2️⃣ Wait until you receive an email with a specified subject. Download the attached
+- For each record in the data table:
+    - Information such as name, password, birthday, address, phone, country code, company, and occupation is generated using the [Fake Name Generator](https://www.fakenamegenerator.com/).
+    - Extracted data is saved in the "result.xlsx" file.
+    - Valid given user data trigger account creation on the [Automation Exercise website](https://automationexercise.com/).
+    - The API endpoint "https://reqres.in/api/users" is called to add user information, to get the ID retrieved from the response. To be the transition item ID
 
-Excel file validating if a file with the correct attachment data format was received,
+💾 **Data Storage and Reporting**:
 
-3️⃣ Enable the “Hide Me” Desktop VPN Application to navigate to the https://hide.me/en/ website, create an account, insert your email, and click on register:
+- Extracted data is stored in "result.xlsx", while transaction results are logged in "summary.csv", including start and end dates, user ID, username, status, error message (if any), and screenshot path.
 
-🔸 If the provided email is not associated with a “Hide Me” account an activation email is received, to activate it and create an account (insert username and password)
+📧 **Email Notification**: The generated "result.xlsx" and "summary.csv" files are sent via email to the recipients.
 
-**🔹** If the provided email is already associated with a “Hide Me” account an email is received asking to change the account password.
-
-♦ If an email is received within 30 seconds and successfully reset to activate the account, then the robot will logout.
-
-4️⃣ log in to the “Hide Me” account and attempt to solve the captcha three times.
-
-5️⃣ Read the data table from the downloaded Excel file.
-
-6️⃣ For each record in the data table, do the following steps:
-
-a. Go to https://www.fakenamegenerator.com/ select gender and country, and click on
-
-generate button, then get the information:
-
-- Name
-- Password
-- Birthday
-- Address
-- Phone
-- Country code
-- Company
-- Occupation
-
-b. Save the extracted data in the result Excel file (mentioned in step 6.e).
-
-c. If the country and gender data are valid: Go to https://automationexercise.com/ and click on sign up, then insert the username.
-
-and email and fill in the user information, click on Create Account (make sure that the account has been created), then click on Continue and delete it.
-
-d. Call this API: https://reqres.in/api/users to add the user info, then get the ID from the
-
-response:
-
-i. End point: https://reqres.in/api/users
-
-ii. Method: POST
-
-iii. Body:
-
-{
-
-"name": "Ronald Beaman",
-
-"birthday": "1980-12-11 ",
-
-"address": "311 Burning Memory Lane",
-
-"phone": "215-289-4533",
-
-"countryCode": "1",
-
-"company": "Red Robin Stores",
-
-"occupation": "dredge operator"
-
-}
-
-e. Save data in the following files:
-
-result.xlsx: contains the user-extracted date in step 7.b.
-
-summary.csv: contains the transaction result
-
-- Start Date: start date of the transaction
-- End Date: The end date of the transaction
-- User ID: the ID value that we get in step 7.
-- Username: the username that we get in step 7.a
-- Status: Completed or Failed
-- Error Message: the error message If the status is failed and empty, it’s completed.
-- Screenshot Path: screenshot of the error
-
-7️⃣ Send the result.xlsx and summary.csv files via email to receiver emails.
-
-8️⃣ Wait until you receive a new email. If you didn’t receive an email for 5 minutes, then stop the
-
-process.
-
-
+⏳ **Email Monitoring**: The system waits for new emails. If no emails are received within 5 minutes, the process stops.
 
 # Core Components
 
