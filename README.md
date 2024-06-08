@@ -1,5 +1,12 @@
 # Project Overview
+A robot built with UI Path that listens to a specific email and reads the nationalities and genders data table from the received email, then generates additional information from the “Fake Name Generator” website, uses it to create a profile on the “Automation Exercise” website,
 
+The user data table is treated as transaction items, which are processed by assigning an ID for each transaction generated from the “https://reqres.in” API using the user information, then processing the item and closing the transaction with a status either completed or failed with a message error and a screenshot.
+
+Also, the process involves enabling the desktop VPN application to create an account on the “Hide Me” VPN website before starting work on the data table records.
+
+Finally, gather all transactions within an excel file along with the user's information and send them back to the recipient email, and prepare to wait for another incoming email to begin processing its items.
+# Automation Workflow Details
 ⚙️ **Configurigation Initialization**: The automation process begins by reading the configuration file to set up the required automation settings.
 
 📧 **Email Reception and Validation**: The system waits until an email with a specified subject is received. Upon reception, it downloads the attached Excel file and validates its format to ensure correct attachment data.
