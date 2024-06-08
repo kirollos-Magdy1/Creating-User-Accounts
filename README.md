@@ -104,13 +104,12 @@ process.
 
 ## Main State Machine
 
-![Main State Machine](https://github.com/kirollos-Magdy1/Creating-User-Accounts/assets/61789409/732fddf9-541b-424f-a4f9-d5f0236096fe)
-- Start by Initlializtion state to load the config file
-- If it is loaded successfully with no system exception,. go to Waiting For Email State to receive the first email
-- While a new email being received, the process will run through the following loop
-    - “Waiting For Email’ =⇒ “Initialization”
-    - “Initialization” =⇒ “Process Transaction”
-    - “Process Transaction” =⇒ “Waiting For Email’
+![Main State Machine](https://github.com/kirollos-Magdy1/Creating-User-Accounts/assets/61789409/f7455e0a-d79e-42e7-8e65-b0d0741b18ba)
+
+- Start by "Initialize Settings" state to load the config file
+- If it is loaded successfully with no system exception, transition to the "Waiting For Email" State to receive the first email
+- While a new valid email is being received, transition to the "process transaction" state
+- While no system exceptions occur during the Process Transaction State, transition back to the Waiting For Email State to receive and handle subsequent emails.
 
 
 ## Receive Email
